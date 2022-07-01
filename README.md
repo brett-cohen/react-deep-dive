@@ -1,35 +1,23 @@
-# Lifecycle
-React components undergo a specific lifecycle as follows:
-1. Mounting
-2. Updating
-3. Unmounting
+# Higher-Order Components
+Higher-Order Components are a design pattern that enable even more reusable component logic. A higher-order component
+takes a component and transforms it into another one by composing it with another component. 
 
-At each stage of this lifecycle, we can inject our own logic. While there are other methods, the most important
-are as follows:
+This may sound complicated, so let's talk through an example. Say you have an app with multiple buttons that open
+various popup menus. Obviously you can't just tie the button directly to a menu because the menus are different. So 
+to facilitate code reuse, we can create a button HOC with all the logic for opening and closing menus. Then,
+we can make that button accept a menu component as an argument and be mounted/rendered alongside that button. The 
+open/close logic is general enough that the specific menu doesn't matter. Now we can use that button anywhere in
+our app and pass it arbitrary menus to handle.
 
-| Method                    | Lifecycle Stage   | When it Occurs                                                                                                 |
-|---------------------------|-------------------|----------------------------------------------------------------------------------------------------------------|
-| `constructor()`           | Mounting          | Component is initiated                                                                                         |
- | `componentDidMount()`     | Mounting          | Component is created and mounted                                                                               |
-| `shouldComponentUpdate()` | Updating          | Any change to state or props                                                                                   |
-| `render()`                | Mounting/Updating | Any change that would cause a re-render including initial mount, can be prevented by `shouldComponentUpdate()` |
-| `componentDidUpdate()`    | Updating          | After any update, can be prevented by `shouldComponentUpdate()`                                                | 
-| `componentWillUnmount()`  | Unmounting        | Right before component is unmounted and destroyed                                                              |
+HOCs promote code reuse by preventing the same functionality from existing across multiple components. Additionally,
+they make testing easier, as tests don't need to be rewritten for the same logic in multiple areas.
 
-The benefits of using these methods is fairly straightforward. 
-- In `componentDidMount()`, we can do any necessary first time setup.
-- The Updating methods are useful for handling changes in data and if a re-render should occur.
-- In `componentWillUnmount()`, we can do any necessary cleanup to preserve system integrity.
+See [React docs page on HOCs](https://reactjs.org/docs/higher-order-components.html) for a great example.
 
-Like state, lifecycle methods are available to class components. The full list of methods can be found on the
-[React docs component page](https://reactjs.org/docs/react-component.html).
+## Composition vs Inheritance
+It's worth discussing some of the philosophy behind React here. React favors composition over inheritance to reuse code, 
+which is to say components should have `has a` relationships and not `is a` relationships. React is designed with this 
+mantra in mind, and React developers should always seek to use composition over inheritance. The React docs 
+have a [page discussing this](https://reactjs.org/docs/composition-vs-inheritance.html) in much better detail.
 
-See `classLifecycle.jsx`.
 
-## Lifecycle Hooks
-Much like state, we can use hooks to hook into lifecycle methods that would be otherwise unavailable to function
-components. In this case, we use an effect hook via `useEffect()`. `useEffect()` runs after every render, including the initial one.
-Thus, it can be used similar to `componentDidMount()` and `componentDidUpdate()`. We can also return an optional
-cleanup function in the effect hook, which will be run when the component unmounts, similar to `componentWillUnmount()`.
-
-See `functionLifecycle.jsx`. Note that this component is essentially identical to `classLifecycle.jsx`.
