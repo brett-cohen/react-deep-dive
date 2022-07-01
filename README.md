@@ -1,30 +1,35 @@
-# State
-State represents data that is persisted (as long as the component is mounted) and exists within the component. 
-Components are responsible for their own state. We can make changes to the state which can then be represented
-as desired in the UI. This allows components to be completely reusable, as the data can be dynamically updated.
+# Lifecycle
+React components undergo a specific lifecycle as follows:
+1. Mounting
+2. Updating
+3. Unmounting
 
-Remember that class based components have access to state and lifecycle methods. See `classState.jsx` for an example.
+At each stage of this lifecycle, we can inject our own logic. While there are other methods, the most important
+are as follows:
 
-## Some Pitfalls
-State should not be changed directly, as it will not re-render a component. `setState` should always be used.
+| Method                    | Lifecycle Stage   | When it Occurs                                                                                                 |
+|---------------------------|-------------------|----------------------------------------------------------------------------------------------------------------|
+| `constructor()`           | Mounting          | Component is initiated                                                                                         |
+ | `componentDidMount()`     | Mounting          | Component is created and mounted                                                                               |
+| `shouldComponentUpdate()` | Updating          | Any change to state or props                                                                                   |
+| `render()`                | Mounting/Updating | Any change that would cause a re-render including initial mount, can be prevented by `shouldComponentUpdate()` |
+| `componentDidUpdate()`    | Updating          | After any update, can be prevented by `shouldComponentUpdate()`                                                | 
+| `componentWillUnmount()`  | Unmounting        | Right before component is unmounted and destroyed                                                              |
 
-State updates may be asynchronous.
+The benefits of using these methods is fairly straightforward. 
+- In `componentDidMount()`, we can do any necessary first time setup.
+- The Updating methods are useful for handling changes in data and if a re-render should occur.
+- In `componentWillUnmount()`, we can do any necessary cleanup to preserve system integrity.
 
-Updates to state are merged into the existing state object. A state object can have multiple independent 
-variables. When calling `setState` for one variable, the others will not be changed.
+Like state, lifecycle methods are available to class components. The full list of methods can be found on the
+[React docs component page](https://reactjs.org/docs/react-component.html).
 
-Data is unidirectional. Only components "below" other components can know about data (passed through their props).
-Those children components also don't know if that data is stateful or not, just what the data is. Since the 
-original component remains in charge of its state, encapsulation is maintained.
+See `classLifecycle.jsx`.
 
-## State Hooks
-Hooks are special functions that "hook" into React functionality that would normally only be accessible to 
-class components. For example, we can use `useState` to give state to our function component. Hooks mitigate
-the downside that function components would normally have of not being able to use this functionality.
+## Lifecycle Hooks
+Much like state, we can use hooks to hook into lifecycle methods that would be otherwise unavailable to function
+components. In this case, we use an effect hook via `useEffect()`. `useEffect()` runs after every render, including the initial one.
+Thus, it can be used similar to `componentDidMount()` and `componentDidUpdate()`. We can also return an optional
+cleanup function in the effect hook, which will be run when the component unmounts, similar to `componentWillUnmount()`.
 
-See `functionState.jsx`.
-
-## State Management
-State across a web app can become considerably complex. Though out of the scope for this discussion, state 
-management tools such as [Redux](https://redux.js.org/) and [MobX](https://mobx.js.org/README.html) allow for
-more robust state management across the entire app, rather than in each component.
+See `functionLifecycle.jsx`. Note that this component is essentially identical to `classLifecycle.jsx`.
