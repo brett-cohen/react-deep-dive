@@ -1,30 +1,9 @@
-# Elements and Components
+# Events
+React elements handle events similarly to DOM elements you would see in HTML. A major difference is that React
+uses [SyntheticEvents](https://reactjs.org/docs/events.html) rather than native events. These behave very 
+similarly, but SyntheticEvents provide better cross-browser compatibility.
 
-## Elements
-Elements are the smallest units of React. A React element is similar to an HTML element, in that it consists of 
-a pair of tags that represent something to be rendered in the UI. The key difference is that React elements are plain
-objects, managed by React DOM.
-
-Elements themselves are immutable. If a change has occurred that needs to be reflected in the UI, the element will be
-re-rendered. However, only the element that needs to change will be updated. Given the previous state, React DOM will
-apply only the DOM changes to get the DOM to the new state and no more. 
-
-See `example.jsx` for a simple element, as well as an element that will be re-rendered every second.
-
-## Components
-While elements are the building blocks, components are the templates that tie those blocks together and make them reusable. Components 
-consist of an arbitrary number of elements.
-
-Furthermore, you can compose multiple components by referring to other components in the output of one component.
-
-See `example.jsx` for two components, one which composes another component.
-
-## Props
-Components also except arbitrary input known as props. Props play an important role in reusability, as they allow you to 
-use a generic component and supply the data required in different scenarios.
-
-The key to writing good, reusable React code is to create generic, data-agnostic components and supply them
-with the proper data via props.
-
-See `exampleWithProps.jsx`
-
+We use a component's props to define the action that should be taken when a certain event is fired off. For 
+example in `events.jsx`, we define `onClick` and `onChange` on a button and input field respectively. We also
+are able to pass input from the event (in this case, text entered into an input field) to our custom function.
+You can see all of the different types of events available on the [React docs events page](https://reactjs.org/docs/events.html).
