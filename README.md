@@ -1,30 +1,13 @@
-# Elements and Components
+# Function vs Class Components
 
-## Elements
-Elements are the smallest units of React. A React element is similar to an HTML element, in that it consists of 
-a pair of tags that represent something to be rendered in the UI. The key difference is that React elements are plain
-objects, managed by React DOM.
+While the previous examples showed components as functions, they can also be written as classes.
 
-Elements themselves are immutable. If a change has occurred that needs to be reflected in the UI, the element will be
-re-rendered. However, only the element that needs to change will be updated. Given the previous state, React DOM will
-apply only the DOM changes to get the DOM to the new state and no more. 
+See `functionComponent.jsx` and `classComponent.jsx`. As far as React is concerned, these two files are exactly the same.
 
-See `example.jsx` for a simple element, as well as an element that will be re-rendered every second.
+There are pros and cons to using one or the other style. Function components are simple and fit in well with JavaScript's
+functional programming. Class components give you access to React's lifecycle methods and local state (covered more in detail later),
+however it's worth noting that hooks (also covered later) allow you access to the same functionality.
 
-## Components
-While elements are the building blocks, components are the templates that tie those blocks together and make them reusable. Components 
-consist of an arbitrary number of elements.
-
-Furthermore, you can compose multiple components by referring to other components in the output of one component.
-
-See `example.jsx` for two components, one which composes another component.
-
-## Props
-Components also except arbitrary input known as props. Props play an important role in reusability, as they allow you to 
-use a generic component and supply the data required in different scenarios.
-
-The key to writing good, reusable React code is to create generic, data-agnostic components and supply them
-with the proper data via props.
-
-See `exampleWithProps.jsx`
+Overall I'm partial to function components due to JavaScript's functional nature, but the important thing is
+consistency and agreement across the team on which style to use.
 
