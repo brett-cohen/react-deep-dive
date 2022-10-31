@@ -6,7 +6,8 @@ I recommend [the official React docs](https://reactjs.org/docs/getting-started.h
 ## Goals
 
 1. Introduce you to the key ideas of React for further learning
-2. Teach you enough to be dangerous
+1. Introduce concepts that may be more difficult to come across organically
+1. Teach you enough to be dangerous
 
 Once you've got the gist of things, [try building your own React app](https://create-react-app.dev/).
 
