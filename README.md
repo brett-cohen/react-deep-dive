@@ -7,3 +7,8 @@ receiving.
 
 See `typeChecking.tsx`.
 
+<br/>  
+  
+[Back to home](https://github.com/brett-cohen/react-deep-dive/tree/main)
+
+[Next Topic: Common Pitfalls](https://github.com/brett-cohen/react-deep-dive/tree/common-pitfalls)
