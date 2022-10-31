@@ -20,4 +20,9 @@ which is to say components should have `has a` relationships and not `is a` rela
 mantra in mind, and React developers should always seek to use composition over inheritance. The React docs 
 have a [page discussing this](https://reactjs.org/docs/composition-vs-inheritance.html) in much better detail.
 
+  
+<br/>  
+  
+[Back to home](https://github.com/brett-cohen/react-deep-dive/tree/main)
 
+[Next Topic: Type Checking](https://github.com/brett-cohen/react-deep-dive/tree/type-checking)
