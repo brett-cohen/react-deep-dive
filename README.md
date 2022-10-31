@@ -7,3 +7,9 @@ JSX is frequently compiled using [Babel](https://babeljs.io/docs/en/). Babel use
 (as well as other Syntax enhancers) into backwards compatible JavaScript, so that you can develop React for a wide variety of environments.
 
 I recommend the [React doc page for JSX](https://reactjs.org/docs/introducing-jsx.html) to go over more of the details, rather than me rehashing them here.
+  
+<br/>  
+  
+[Back to home](https://github.com/brett-cohen/react-deep-dive/tree/main)
+
+[Next Topic: Elements and Components](https://github.com/brett-cohen/react-deep-dive/tree/elements-and-components)
