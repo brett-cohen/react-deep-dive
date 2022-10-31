@@ -1,4 +1,4 @@
-# Function vs Class Components
+# Class vs Function Components
 
 While the previous examples showed components as functions, they can also be written as classes.
 
@@ -11,3 +11,9 @@ however it's worth noting that hooks (also covered later) allow you access to th
 Overall I'm partial to function components due to JavaScript's functional nature, but the important thing is
 consistency and agreement across the team on which style to use.
 
+  
+<br/>  
+  
+[Back to home](https://github.com/brett-cohen/react-deep-dive/tree/main)
+
+[Next Topic: Events](https://github.com/brett-cohen/react-deep-dive/tree/Events)
