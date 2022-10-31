@@ -7,3 +7,10 @@ We use a component's props to define the action that should be taken when a cert
 example in `events.jsx`, we define `onClick` and `onChange` on a button and input field respectively. We also
 are able to pass input from the event (in this case, text entered into an input field) to our custom function.
 You can see all of the different types of events available on the [React docs events page](https://reactjs.org/docs/events.html).
+
+  
+<br/> 
+  
+[Back to home](https://github.com/brett-cohen/react-deep-dive/tree/main)
+
+[Next Topic: State](https://github.com/brett-cohen/react-deep-dive/tree/state)
