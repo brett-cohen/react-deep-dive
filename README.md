@@ -28,3 +28,10 @@ See `functionState.jsx`.
 State across a web app can become considerably complex. Though out of the scope for this discussion, state 
 management tools such as [Redux](https://redux.js.org/) and [MobX](https://mobx.js.org/README.html) allow for
 more robust state management across the entire app, rather than in each component.
+
+  
+<br/>  
+  
+[Back to home](https://github.com/brett-cohen/react-deep-dive/tree/main)
+
+[Next Topic: Lifecycle](https://github.com/brett-cohen/react-deep-dive/tree/lifecycle)
