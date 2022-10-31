@@ -28,3 +28,9 @@ with the proper data via props.
 
 See `exampleWithProps.jsx`
 
+  
+<br/>  
+  
+[Back to home](https://github.com/brett-cohen/react-deep-dive/tree/main)
+
+[Next Topic: Class vs Function Components](https://github.com/brett-cohen/react-deep-dive/tree/class-vs-function-components)
