@@ -33,3 +33,10 @@ Thus, it can be used similar to `componentDidMount()` and `componentDidUpdate()`
 cleanup function in the effect hook, which will be run when the component unmounts, similar to `componentWillUnmount()`.
 
 See `functionLifecycle.jsx`. Note that this component is essentially identical to `classLifecycle.jsx`.
+
+  
+<br/>  
+  
+[Back to home](https://github.com/brett-cohen/react-deep-dive/tree/main)
+
+[Next Topic: Higher-Order Components](https://github.com/brett-cohen/react-deep-dive/tree/higher-order-components)
